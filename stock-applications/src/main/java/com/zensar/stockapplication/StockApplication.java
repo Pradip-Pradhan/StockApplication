@@ -13,7 +13,7 @@ import com.zensar.stockapplication.entity.Stock;
 
 @SpringBootApplication
 //@ImportResource("Beans.xml")
-public class StockApplication{
+public class StockApplication extends SpringBootServletInitializer{
 	
 	
 	public static void main(String[] args) {
@@ -29,6 +29,13 @@ public class StockApplication{
 		
 	}
 
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		// TODO Auto-generated method stub
+		return super.configure(builder);
+	}
+	
+	
 	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
