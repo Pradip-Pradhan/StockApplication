@@ -127,13 +127,16 @@ public class StockServiceImpl implements StockService {
 	@Override
 	public StockDto createStock(StockDto stock, String token) {
 
+		
 		Stock newStock = modelMapper.map(stock, Stock.class);
 
 		// return stockRepository.save(stock);
 
 		if (token.equals("sr43993")) {
+			System.out.println(token);
 			Stock save = stockRepository.save(newStock);
-			return modelMapper.map(save, StockDto.class);
+			StockDto newOne=modelMapper.map(save, StockDto.class);
+			return newOne;
 
 		} else {
 			return null;

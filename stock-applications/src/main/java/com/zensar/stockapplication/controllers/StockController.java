@@ -117,7 +117,7 @@ public class StockController {
 	//@RequestMapping(method = RequestMethod.POST)
 	@PostMapping(produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE} , consumes = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
 	public ResponseEntity<StockDto> createStock( @RequestBody StockDto stock, @RequestHeader("auth-token")String token ) {
-		System.out.println(token);
+		//System.out.println(token);
 		StockDto createdStock= stockService.createStock(stock, token);	
 		
 		return new ResponseEntity<StockDto>(createdStock, HttpStatus.CREATED);
